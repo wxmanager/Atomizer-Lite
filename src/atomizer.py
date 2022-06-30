@@ -9,17 +9,18 @@ def mainwin():
   app.setApplicationName("Atomizer")
   appwin = QWidget()
   
-  appwin.setMinimumSize(QSize(500, 200))
+  appwin.setMinimumSize(QSize(200, 200))
   appwin.show()
 
-  textedit = QTextEdit()
-  textedit.setLineWrapMode(QTextEdit.LineWrapMode.NoWrap)
-  textedit.setFont(QFont("Monospace"))
+  txt = QTextEdit()
+  txt.setFont(QFont("Monospace"))
 
   winlayout = QVBoxLayout()
-  winlayout.setContentsMargins(0,0,0,0)
+  winlayout.setContentsMargins(15,15,15,15)
+
   
-  winlayout.addWidget(textedit)
+  
+  winlayout.addWidget(txt)
   appwin.setLayout(winlayout)
   
   appwin.show()
