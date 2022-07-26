@@ -1,7 +1,7 @@
-from PySide6.QtWidgets import *
-from PySide6.QtCore import QSize
-from PySide6.QtGui import QFont
-from PySide6.QtWidgets import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import QSize
+from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import *
 
 def mainwin():
   
