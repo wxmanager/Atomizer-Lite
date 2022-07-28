@@ -1,59 +1,57 @@
+from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
 import sys
 
-class Window(QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
   def __init__(self):
     super().__init__()
+    
+    self.mainatomizer = Atomizer()
+    self.setCentralWidget(self.mainatomizer)
+    
+
+    exitaction = QAction('&Exit', self)
+    exitaction.setShortcut('Ctrl+Q')
+    exitaction.setStatusTip('Exit Atomizer')
+    exitaction.triggered.connect(qApp.quit)
+  
+    saveaction = QAction("&Save File")
+    saveaction.setShortcut("Ctrl+S")
+    saveaction.setStatusTip('Save File')
+    saveaction.triggered.connect(qApp.quit)
+    
+    self.statusBar()
+
+    bar = self.menuBar()
+    fileMenu = bar.addMenu("&File")
+    fileMenu.addAction(exitaction)
+    fileMenu.addAction(saveaction)
+
+class Atomizer(QtWidgets.QWidget):
+  def __init__(self):
+    super().__init__()
+
     self.setWindowTitle("Atomizer")
     self.setGeometry(100, 100, 800, 600)    
-    self.setMinimumSize(QSize(200, 200))
-    self.show()
+    self.setMinimumSize(QSize(500, 400))
 
     txt = QTextEdit()
     txt.setFont(QFont("Monospace"))
-
-    def file_save(self):
-      name = QFileDialog.getSaveFileName(self, "Save File", "", "Text Files (*.txt)")
-      file = open (name, "w")
-      text = self.txt.toPlainText()
-      file.write(text)
-      file.close()
     
-    menubar = self.menuBar()
-    fileMenu = menubar.addMenu('&File')
-
-    saveFile = QAction("&Save File", self)
-    saveFile.setShortcut("Ctrl+S")
-    saveFile.setStatusTip('Save File')
-    saveFile.triggered.connect(self, file_save)
-
-    
-    fileMenu.addAction(saveFile)
-
     winlayout = QVBoxLayout()
     winlayout.setContentsMargins(15,15,15,15)
 
-
     winlayout.addWidget(txt)
     self.setLayout(winlayout)
-    
-    self.show()
-
-    app = QApplication(sys.argv)
-    
 
 
-def run():
-  app = Window()
+if __name__ == '__main__':
+  app = QtWidgets.QApplication([])
 
-  sys.exit(app.exec_())
+  widget = MainWindow()
+  widget.show()
 
-  
-  
-
-run()
-  
-
+  sys.exit(app.exec())
