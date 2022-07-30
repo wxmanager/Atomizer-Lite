@@ -8,27 +8,44 @@ import sys
 class MainWindow(QtWidgets.QMainWindow):
   def __init__(self):
     super().__init__()
-    
+    self.setWindowTitle("Atomizer")
+
     self.mainatomizer = Atomizer()
     self.setCentralWidget(self.mainatomizer)
     
+
+    saveaction = QAction("&Save File (Non Functional)", self)
+    saveaction.setShortcut("Ctrl+S")
+    saveaction.setStatusTip('Save File')
+    saveaction.triggered.connect(qApp.quit)
+    
+    openaction = QAction("&Open File (Non Functional)", self)
+    openaction.setShortcut("Ctrl+O")
+    openaction.setStatusTip('Open File')
+    openaction.triggered.connect(qApp.quit)
 
     exitaction = QAction('&Exit', self)
     exitaction.setShortcut('Ctrl+Q')
     exitaction.setStatusTip('Exit Atomizer')
     exitaction.triggered.connect(qApp.quit)
+    
+    abtqt = QAction('&About QT', self)
+    abtqt.setStatusTip('About QT')
+    abtqt.triggered.connect(qApp.aboutQt)
+
   
-    saveaction = QAction("&Save File")
-    saveaction.setShortcut("Ctrl+S")
-    saveaction.setStatusTip('Save File')
-    saveaction.triggered.connect(qApp.quit)
     
     self.statusBar()
 
     bar = self.menuBar()
+    
     fileMenu = bar.addMenu("&File")
-    fileMenu.addAction(exitaction)
     fileMenu.addAction(saveaction)
+    fileMenu.addAction(openaction)
+    fileMenu.addAction(exitaction)
+
+    aboutMenu = bar.addMenu("&About")
+    aboutMenu.addAction(abtqt)
 
 class Atomizer(QtWidgets.QWidget):
   def __init__(self):
