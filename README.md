@@ -10,4 +10,6 @@ Todo:
 
 - [x] Work on a Menubar
 - [ ] Work on a working save function
+- [ ] Add Tabs
+- [ ] Extensive file support
 - [x] Port the project to PyQt5
