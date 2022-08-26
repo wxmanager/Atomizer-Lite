@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui
 from uis.Ui_MainWindow import Ui_MainWindow
 
 
@@ -10,8 +10,12 @@ class MainWindow:
         self.main_win = QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
-        self.main_win.setWindowTitle("Atomizer - New File")
+        font = QtGui.QFont('monospace')
+        font.setPointSize(15)
+        
+        self.ui.plainTextEdit.setFont(font)
 
+        self.main_win.setWindowTitle("Atomizer - New File")
         self.ui.actionQuit.triggered.connect(self.main_win.close)
         self.ui.actionLoad_File.triggered.connect(self.load_file)
         self.ui.actionSave_file.triggered.connect(self.save_file)
