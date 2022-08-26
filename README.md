@@ -11,6 +11,7 @@ Todo:
 - [x] Work on a Menubar
 - [x] Work on a working save function (Thanks to @pilot877)
 - [ ] Add Tabs
+- [ ] Release Atomizer on Most Repos, Flatpak, Snapcraft, and release appimage/.exe releases 
 - [x] Extensive file support (Thanks to @pilot877)
 - [x] Port the project to PyQt5 
 
