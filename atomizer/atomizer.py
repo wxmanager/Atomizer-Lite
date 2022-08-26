@@ -46,7 +46,7 @@ class MainWindow:
         self.aboutdlg = QMessageBox()
         self.aboutdlg.setIcon(QMessageBox.Information)
         self.aboutdlg.setWindowTitle("About Atomizer")
-        self.aboutdlg.setText("Atomizer is a text editor made for the Wxmanager Desktop environment \n\nAtomizer Version: RC 3")
+        self.aboutdlg.setText("Atomizer is atext editor made for the Wxmanager Desktop environment \n\nAtomizer Version: ")
         self.aboutdlg.exec_()
 
 if __name__ == "__main__":
