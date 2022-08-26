@@ -9,7 +9,9 @@ A Minimalistic customizable python based Text editor!, enjoy the ✨ Minimalism 
 Todo:
 
 - [x] Work on a Menubar
-- [ ] Work on a working save function
+- [x] Work on a working save function (Thanks to @pilot877)
 - [ ] Add Tabs
-- [ ] Extensive file support
-- [x] Port the project to PyQt5
+- [x] Extensive file support (Thanks to @pilot877)
+- [x] Port the project to PyQt5 
+
+
