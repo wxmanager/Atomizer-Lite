@@ -2,7 +2,9 @@
 
 # Atomizer
 
-A Minimalistic customizable python based Text editor!, enjoy the ✨ Minimalism ✨ and customize the notepad to your hearts content! (doesn't store anything/forgets what you wrote once closed)
+A Minimalistic customizable python based Text editor!, enjoy the ✨ Minimalism ✨ and customize the notepad to your hearts content!
+
+Atomizer is Part of the WxManager Family :heart:
 
 ---
 
