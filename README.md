@@ -1,4 +1,4 @@
-![window](https://user-images.githubusercontent.com/79197022/182030782-85e39313-b9b0-4690-b02b-f2a13ad4163f.png)
+![image](https://user-images.githubusercontent.com/79197022/187083986-2559d40b-8d68-4d6c-ad67-ded2821f39e9.png)
 
 # Atomizer
 
