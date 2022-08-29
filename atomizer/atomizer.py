@@ -20,6 +20,9 @@ class MainWindow:
         self.ui.actionLoad_File.triggered.connect(self.load_file)
         self.ui.actionSave_file.triggered.connect(self.save_file)
         self.ui.actionAbout.triggered.connect(self.about)
+        
+
+        
 
         
     def show(self) -> None:
@@ -34,6 +37,8 @@ class MainWindow:
                 text = f.read()
                 self.ui.plainTextEdit.setPlainText(text)
                 self.main_win.setWindowTitle(f"Atomizer - {f_name[0]}")
+                
+                
 
 
 
