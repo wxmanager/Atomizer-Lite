@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 from PyQt5 import QtCore, QtGui
 from uis.Ui_MainWindow import Ui_MainWindow
+import os
 
 
 
@@ -20,9 +21,6 @@ class MainWindow:
         self.ui.actionLoad_File.triggered.connect(self.load_file)
         self.ui.actionSave_file.triggered.connect(self.save_file)
         self.ui.actionAbout.triggered.connect(self.about)
-        
-
-        
 
         
     def show(self) -> None:
