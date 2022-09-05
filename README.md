@@ -13,6 +13,8 @@ Todo:
 - [x] Work on a Menubar
 - [x] Work on a working save function (Thanks to @pilot877)
 - [ ] Add Tabs
+  - [ ] Add create, close, restore, and other tab features :3
+  - [ ] Implement Compact Tabs 
 - [ ] Release Atomizer on Most Repos, Flatpak, Snapcraft, and release appimage/.exe releases 
 - [x] Extensive file support (Thanks to @pilot877)
 - [x] Port the project to PyQt5 
