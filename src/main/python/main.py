@@ -22,13 +22,17 @@ class MainWindow:
         self.ui.actionSave_file.triggered.connect(self.save_file)
         self.ui.actionAbout.triggered.connect(self.about)
 
+        self.ui.actionClose_Tab.triggered.connect(self.close)
+
     def show(self) -> None:
         self.main_win.show()
+    def close(self) -> None:
+        sys.exit()
+
 
     def load_file(self):
         load_dlg = QFileDialog()
         f_name = load_dlg.getOpenFileName(load_dlg, caption="Load File")
-
         if not f_name[0] == "":
             with open(f_name[0], "r") as f:
                 text = f.read()
