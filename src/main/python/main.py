@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QWidget
 from PyQt5 import QtCore, QtGui
 from uis.Ui_MainWindow import Ui_MainWindow
 import os
@@ -20,6 +20,8 @@ class MainWindow:
         self.ui.actionQuit.triggered.connect(self.main_win.close)
         self.ui.actionLoad_File.triggered.connect(self.load_file)
         self.ui.actionSave_file.triggered.connect(self.save_file)
+        self.ui.actionNew_Tab.triggered.connect(self.newtab)
+        self.ui.actionClose_Tab.triggered.connect(self.removetab)
         self.ui.actionAbout.triggered.connect(self.about)
 
         self.ui.actionClose_Tab.triggered.connect(self.close)
@@ -46,7 +48,12 @@ class MainWindow:
             with open(f_name[0], "w") as f:
                 f.write(self.ui.plainTextEdit.toPlainText())
                 self.main_win.setWindowTitle(f"Atomizer - {f_name[0]}")
-
+    
+    def newtab(self):
+        self.ui.tabWidget.addTab(QWidget(), "Atomizer - New tab")
+    def removetab(self):
+        self.ui.tabWidget.removeTab(0)
+    
     def about(self):
         self.aboutdlg = QMessageBox()
         self.aboutdlg.setIcon(QMessageBox.Information)

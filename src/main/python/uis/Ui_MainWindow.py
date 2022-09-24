@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\S305126\Documents\GitHub\Atomizer\atomizer\uc_uis\Atomizer.ui'
+# Form implementation generated from reading ui file 'c:\Users\S305126\Documents\GitHub\Atomizer\src\main\python\uc_uis\Atomizer.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -21,6 +21,7 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setTabsClosable(True)
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
@@ -34,7 +35,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -55,8 +56,14 @@ class Ui_MainWindow(object):
         self.actionNew_Tab.setObjectName("actionNew_Tab")
         self.actionClose_Tab = QtWidgets.QAction(MainWindow)
         self.actionClose_Tab.setObjectName("actionClose_Tab")
+        self.actionSettings = QtWidgets.QAction(MainWindow)
+        self.actionSettings.setShortcut("Ctrl+,")
+        self.actionSettings.setShortcutVisibleInContextMenu(False)
+        self.actionSettings.setObjectName("actionSettings")
         self.menuFile.addAction(self.actionLoad_File)
         self.menuFile.addAction(self.actionSave_file)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionSettings)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionQuit)
         self.menuAbout.addAction(self.actionAbout)
@@ -86,7 +93,7 @@ class Ui_MainWindow(object):
         self.actionNew_Tab.setText(_translate("MainWindow", "New Tab"))
         self.actionNew_Tab.setShortcut(_translate("MainWindow", "Ctrl+T"))
         self.actionClose_Tab.setText(_translate("MainWindow", "Close Tab"))
-        self.actionClose_Tab.setShortcut(_translate("MainWindow", "Ctrl+W"))
+        self.actionSettings.setText(_translate("MainWindow", "Settings"))
 
 
 if __name__ == "__main__":
