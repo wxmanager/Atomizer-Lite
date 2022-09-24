@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\S305126\Documents\GitHub\Atomizer\src\main\python\uc_uis\Atomizer.ui'
+# Form implementation generated from reading ui file 'c:\Users\S305126\Documents\GitHub\Atomizer-Lite\src\main\python\uc_uis\Atomizerlite.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -20,19 +20,10 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setTabsClosable(True)
-        self.tabWidget.setObjectName("tabWidget")
-        self.tab = QtWidgets.QWidget()
-        self.tab.setObjectName("tab")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.tab)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.tab)
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
         self.plainTextEdit.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
         self.plainTextEdit.setObjectName("plainTextEdit")
-        self.verticalLayout_2.addWidget(self.plainTextEdit)
-        self.tabWidget.addTab(self.tab, "")
-        self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.plainTextEdit, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -41,8 +32,6 @@ class Ui_MainWindow(object):
         self.menuFile.setObjectName("menuFile")
         self.menuAbout = QtWidgets.QMenu(self.menubar)
         self.menuAbout.setObjectName("menuAbout")
-        self.menuTabs = QtWidgets.QMenu(self.menubar)
-        self.menuTabs.setObjectName("menuTabs")
         MainWindow.setMenuBar(self.menubar)
         self.actionLoad_File = QtWidgets.QAction(MainWindow)
         self.actionLoad_File.setObjectName("actionLoad_File")
@@ -67,29 +56,23 @@ class Ui_MainWindow(object):
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionQuit)
         self.menuAbout.addAction(self.actionAbout)
-        self.menuTabs.addAction(self.actionNew_Tab)
-        self.menuTabs.addAction(self.actionClose_Tab)
         self.menubar.addAction(self.menuFile.menuAction())
-        self.menubar.addAction(self.menuTabs.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Atomizer - New File"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuAbout.setTitle(_translate("MainWindow", "About"))
-        self.menuTabs.setTitle(_translate("MainWindow", "Tabs"))
         self.actionLoad_File.setText(_translate("MainWindow", "Load File"))
         self.actionLoad_File.setShortcut(_translate("MainWindow", "Ctrl+L"))
         self.actionSave_file.setText(_translate("MainWindow", "Save File"))
         self.actionSave_file.setShortcut(_translate("MainWindow", "Ctrl+S"))
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
         self.actionQuit.setShortcut(_translate("MainWindow", "Ctrl+Q"))
-        self.actionAbout.setText(_translate("MainWindow", "About Atomizer"))
+        self.actionAbout.setText(_translate("MainWindow", "About Atomizer Lite"))
         self.actionNew_Tab.setText(_translate("MainWindow", "New Tab"))
         self.actionNew_Tab.setShortcut(_translate("MainWindow", "Ctrl+T"))
         self.actionClose_Tab.setText(_translate("MainWindow", "Close Tab"))

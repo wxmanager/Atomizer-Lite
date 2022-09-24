@@ -15,28 +15,11 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>0</number>
+    <item row="0" column="0">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="lineWrapMode">
+       <enum>QPlainTextEdit::NoWrap</enum>
       </property>
-      <property name="tabsClosable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Atomizer - New File</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QPlainTextEdit" name="plainTextEdit">
-          <property name="lineWrapMode">
-           <enum>QPlainTextEdit::NoWrap</enum>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -67,15 +50,7 @@
     </property>
     <addaction name="actionAbout"/>
    </widget>
-   <widget class="QMenu" name="menuTabs">
-    <property name="title">
-     <string>Tabs</string>
-    </property>
-    <addaction name="actionNew_Tab"/>
-    <addaction name="actionClose_Tab"/>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuTabs"/>
    <addaction name="menuAbout"/>
   </widget>
   <action name="actionLoad_File">
@@ -104,7 +79,7 @@
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About Atomizer</string>
+    <string>About Atomizer Lite</string>
    </property>
   </action>
   <action name="actionNew_Tab">

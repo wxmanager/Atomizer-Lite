@@ -16,15 +16,12 @@ class MainWindow:
 
         self.ui.plainTextEdit.setFont(font)
 
-        self.main_win.setWindowTitle("Atomizer - New File")
+        self.main_win.setWindowTitle("Atomizer Lite - New File")
         self.ui.actionQuit.triggered.connect(self.main_win.close)
         self.ui.actionLoad_File.triggered.connect(self.load_file)
         self.ui.actionSave_file.triggered.connect(self.save_file)
-        self.ui.actionNew_Tab.triggered.connect(self.newtab)
-        self.ui.actionClose_Tab.triggered.connect(self.removetab)
         self.ui.actionAbout.triggered.connect(self.about)
 
-        self.ui.actionClose_Tab.triggered.connect(self.close)
 
     def show(self) -> None:
         self.main_win.show()
@@ -39,7 +36,7 @@ class MainWindow:
             with open(f_name[0], "r") as f:
                 text = f.read()
                 self.ui.plainTextEdit.setPlainText(text)
-                self.main_win.setWindowTitle(f"Atomizer - {f_name[0]}")
+                self.main_win.setWindowTitle(f"Atomizer Lite - {f_name[0]}")
 
     def save_file(self):
         save_dlg = QFileDialog()
@@ -47,19 +44,14 @@ class MainWindow:
         if not f_name[0] == "":
             with open(f_name[0], "w") as f:
                 f.write(self.ui.plainTextEdit.toPlainText())
-                self.main_win.setWindowTitle(f"Atomizer - {f_name[0]}")
-    
-    def newtab(self):
-        self.ui.tabWidget.addTab(QWidget(), "Atomizer - New tab")
-    def removetab(self):
-        self.ui.tabWidget.removeTab(0)
+                self.main_win.setWindowTitle(f"Atomizer Lite - {f_name[0]}")
     
     def about(self):
         self.aboutdlg = QMessageBox()
         self.aboutdlg.setIcon(QMessageBox.Information)
         self.aboutdlg.setWindowTitle("About Atomizer")
         self.aboutdlg.setText(
-            "Atomizer is atext editor made for the Wxmanager Desktop environment \n\nAtomizer Version: ")
+            "Atomizer is a text editor made for the Wxmanager Desktop environment \n\nAtomizer Version: ")
         self.aboutdlg.exec_()
 
 
